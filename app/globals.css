@@ -1,0 +1,16 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+html { scroll-behavior: smooth; }
+body { @apply bg-cream text-maroon-dark font-sans antialiased; }
+:focus-visible { outline: 2px solid #b8923f; outline-offset: 2px; }
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition duration-300 disabled:opacity-60; }
+  .btn-primary { @apply bg-maroon text-cream hover:bg-maroon-soft; }
+  .btn-gold { @apply bg-gold text-maroon-dark hover:bg-gold-light; }
+  .btn-outline { @apply border border-maroon/40 text-maroon hover:bg-maroon hover:text-cream; }
+  .btn-wa { @apply bg-[#1f8f4d] text-white hover:bg-[#177a40]; }
+  .h-display { @apply font-serif font-semibold leading-tight text-maroon; }
+  .eyebrow { @apply text-xs uppercase tracking-[.3em] text-gold; }
+  .field { @apply w-full rounded-lg border border-beige bg-white px-4 py-3 text-sm focus:border-gold focus:outline-none; }
+  .orn { background: linear-gradient(90deg, transparent, #b8923f, transparent); height: 1px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
