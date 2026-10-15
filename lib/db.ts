@@ -33,7 +33,6 @@ const g = globalThis as unknown as { _db?: DBInstance };
 export function db(): DBInstance {
   if (g._db) return g._db;
   fs.mkdirSync(path.join(DATA_DIR, 'uploads'), { recursive: true });
-  // @ts-expect-error - node:sqlite types may not be present in @types/node v20
   const rawDb = new DatabaseSync(path.join(DATA_DIR, 'mehndi.db'));
 
   const d: DBInstance = {
